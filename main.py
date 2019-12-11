@@ -59,7 +59,7 @@ def goToBank():
 	pyautogui.moveTo(map_bank_pos)
 	pyautogui.click()
 	player_pos = 1
-	time.sleep(15)
+	time.sleep(10)
 
 def clickBankBooth():
 	bank_booth_pos = (790, 425)
@@ -81,10 +81,11 @@ def returnTree():
 	pyautogui.moveTo(tree_pos)
 	screen = captureScreen()
 	screen_pixel = screen.getpixel(oak_word_pos)
-	if abs(screen_pixel[0] - oak_word_pos[0]) <= 10:
+	if abs(screen_pixel[0] - oak_word_colour[0]) <= 10:
 		pyautogui.moveTo(tree_pos)
 		pyautogui.click()
 		player_pos = 0
+		time.sleep(10)
 
 
 def main():
